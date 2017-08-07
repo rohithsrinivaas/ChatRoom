@@ -1,0 +1,52 @@
+<h1>
+HOME SCREEN
+</h1>
+
+
+{% if active %} 
+	<h3> Logged In as <a href = {{user_url}} > {{username}} </a></h3>
+	<button onclick="location.href='/wall/logout'" type="button">Log Out</button>
+	{% if posts %}
+	<ul>
+		{% for p in posts %}
+		<li> 
+			<p>
+				{{ p.post_text }}
+			</p>
+			<br />
+			
+			
+			<p>
+				{{ p.date_text }}
+			</p>
+			<p>
+			{% p.likes_count += 1 %}
+			Number of Likes: {{p.likes_count}}
+			</p>
+
+			<p>
+			<button onclick="location.href='/'" type="button">Upvote</button>
+			</p>
+			<a href="/wall/users/{{ p.owner.user_name }}/">
+				{{ p.owner.user_name }}
+			</a>
+			<hr />
+		</li>
+		{% endfor %}
+
+	</ul>
+
+	{% endif %}
+	<p>
+
+	That's all we've got!
+	Do you want post???
+	</p>
+
+{% endif %}
+
+
+{% if not active %}
+	<h2> Invalid Login <h2>
+	<button onclick="location.href='/'" type="button">Try Again</button>
+{% endif %}

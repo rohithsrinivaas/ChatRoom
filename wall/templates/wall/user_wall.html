@@ -1,0 +1,30 @@
+<h1>
+Welcome to {{ username }}'s wall!
+</h1>
+
+{% if posts %}
+<ul>
+	{% for p in posts %}
+	<li> 
+		<p>
+			{{ p.post_text }}
+		</p>
+		<br />
+		
+		
+		<p>
+			{{ p.date_text }}
+		</p>
+		
+		<hr />
+	</li>
+	{% endfor %}
+
+</ul>
+
+{% endif %}
+<p>
+
+That's all we've got!
+
+</p>

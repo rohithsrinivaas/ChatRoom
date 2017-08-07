@@ -1,0 +1,13 @@
+<h1>
+Join socialNetwork.
+</h1>
+
+<form action="../signUpHandler/" method="post" class="register-form">
+{% csrf_token %}
+
+<input type="text" placeholder="name" name="name" id="name"/>
+<input type="password" placeholder="password" name="password" id="password"/>
+<input type="text" placeholder="email -ddress" name="email" id="email"/>
+<input type="submit" value="Sign Up!">
+<p class="message">Already registered? <a href="/">Sign In</a></p>
+</form>

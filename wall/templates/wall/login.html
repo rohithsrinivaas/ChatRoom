@@ -1,0 +1,11 @@
+<h1>
+Welcome to ChatRoom.
+</h1>
+
+<form action="/wall/logInHandler/" method="post" class="login-form">
+{% csrf_token %}
+  <input type="text" placeholder="username" name="name" id="name"/>
+  <input type="password" placeholder="password" name="password" id="password"/>
+  <input type="submit" value="Log In!">
+  <p class="message">Not registered? <a href="/wall/signup/">Create an account</a></p>
+</form>
